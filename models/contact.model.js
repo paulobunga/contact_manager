@@ -1,4 +1,4 @@
-const sql = require('../config/database');
+const sql = require('../utilities/database');
 
 // constructor
 const Contact = function (data) {
