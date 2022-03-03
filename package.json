@@ -9,10 +9,10 @@
   },
   "name": "mysql_app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index",
-    "start:dev": "nodemon index"
+    "start": "node server",
+    "start:dev": "nodemon server"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,6 @@
 const sql = require('../utilities/database');
 
+
 // constructor
 const Contact = function (data) {
   this.name = data.name;
@@ -16,6 +17,7 @@ Contact.create = (newContact, result) => {
       return;
     }
 
+    /** Notice use of spread operator to merge values into new object */
     console.log('created contact: ', { id: res.insertId, ...newContact });
     result(null, { id: res.insertId, ...newContact });
   });
@@ -59,7 +61,7 @@ Contact.getAll = (name, result) => {
   });
 };
 
-Contact.getAllInternation = (result) => {
+Contact.getAllInternational = (result) => {
   sql.query('SELECT * FROM contacts WHERE international=true', (err, res) => {
     if (err) {
       console.log('error: ', err);

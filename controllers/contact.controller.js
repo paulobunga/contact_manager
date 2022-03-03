@@ -17,6 +17,10 @@ exports.create = (req, res) => {
     international: req.body.international || false,
   });
 
+  /** If no manipulationt is required, can use spread operator on req..body
+   * const contact = new Contact({...req.body});
+   */
+
   // Save Contact in the database
   Contact.create(contact, (err, data) => {
     if (err)
